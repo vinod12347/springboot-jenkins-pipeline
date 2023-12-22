@@ -4,7 +4,7 @@ node {
   }
 
   stage("Compilation") {
-    sh "sudo -S ./mvnw clean install -DskipTests"
+    sh "sudo -S password ./mvnw clean install -DskipTests"
   }
 
   stage("Tests and Deployment") {
