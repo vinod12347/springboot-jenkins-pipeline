@@ -5,14 +5,8 @@ node {
 
   stage("Compilation") {
     sh "chmod 777 ./mvnw"
-    sh "./mvnw clean install -DskipTests"
+    sh "./mvnw clean install"
   }
-
-  stage("Tests and Deployment") {
-    stage("Runing unit tests") {
-      sh "chmod 777 ./mvnw"
-      sh "./mvnw test -Punit"
-    }
     stage("Deployment") {
       sh "chmod 777 ./mvnw"
       sh 'nohup ./mvnw spring-boot:run -Dserver.port=8001 &'
