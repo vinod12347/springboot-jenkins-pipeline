@@ -3,12 +3,12 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-               sh 'mvn clean install'
+               sh '${M2}/mvn clean install'
             }
         }
          stage('Deploy') {
             steps {
-               sh 'mvn spring-boot:run'
+               sh '${M2}/mvn spring-boot:run'
             }
         }
     }
