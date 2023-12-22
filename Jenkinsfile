@@ -4,14 +4,17 @@ node {
   }
 
   stage("Compilation") {
-    sh "sudo -S password ./mvnw clean install -DskipTests"
+    sh "chmod 777 ./mvnw"
+    sh "./mvnw clean install -DskipTests"
   }
 
   stage("Tests and Deployment") {
     stage("Runing unit tests") {
-      sh "sudo ./mvnw test -Punit"
+      sh "chmod 777 ./mvnw"
+      sh "./mvnw test -Punit"
     }
     stage("Deployment") {
+      sh "chmod 777 ./mvnw"
       sh 'nohup ./mvnw spring-boot:run -Dserver.port=8001 &'
     }
   }
