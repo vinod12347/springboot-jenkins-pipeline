@@ -1,14 +1,18 @@
 pipeline {
     agent any
+    tools { 
+      maven 'MAVEN_HOME' 
+      jdk 'JAVA_HOME' 
+    }
     stages {
         stage('Build') {
             steps {
-               sh '${M2}/mvn clean install'
+               sh 'mvn clean install'
             }
         }
          stage('Deploy') {
             steps {
-               sh '${M2}/mvn spring-boot:run'
+               sh 'mvn spring-boot:run'
             }
         }
     }
