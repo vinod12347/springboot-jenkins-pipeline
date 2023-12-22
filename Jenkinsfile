@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-              echo '${env.M2}'
+              echo '${env.BUILD_NUMBER}'
                 echo '${env.JAVA_HOME}'
             }
         }
