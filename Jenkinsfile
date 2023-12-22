@@ -4,12 +4,12 @@ node {
   }
 
   stage("Compilation") {
-    sh "./mvnw clean install -DskipTests"
+    sh "sudo ./mvnw clean install -DskipTests"
   }
 
   stage("Tests and Deployment") {
     stage("Runing unit tests") {
-      sh "./mvnw test -Punit"
+      sh "sudo ./mvnw test -Punit"
     }
     stage("Deployment") {
       sh 'nohup ./mvnw spring-boot:run -Dserver.port=8001 &'
