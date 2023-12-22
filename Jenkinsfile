@@ -1,10 +1,5 @@
 pipeline {
     agent any
-    tools {
-        maven 'Maven 3.9.6'
-        jdk 'Corretto-17.0.9.8.1'
-    }
-    
     stages {
         stage('Build') {
             steps {
@@ -13,7 +8,7 @@ pipeline {
         }
          stage('Deploy') {
             steps {
-               sh './mvnw spring-boot:run'
+               sh 'mvn spring-boot:run'
             }
         }
     }
