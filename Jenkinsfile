@@ -11,5 +11,4 @@ node {
       sh "chmod 777 ./mvnw"
       sh 'nohup ./mvnw spring-boot:run -Dserver.port=8001 &'
     }
-  }
 }
