@@ -1,13 +1,11 @@
 pipeline {
     agent any
-    tools { 
-      maven 'MAVEN_HOME' 
-      jdk 'JAVA_HOME' 
-    }
+   
     stages {
         stage('Build') {
             steps {
-               sh 'mvn clean install'
+              echo '${M2}'
+                echo '${JAVA_HOME}'
             }
         }
          stage('Deploy') {
