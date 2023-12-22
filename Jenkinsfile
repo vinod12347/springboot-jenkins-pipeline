@@ -4,8 +4,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-              echo '${M2}'
-                echo '${JAVA_HOME}'
+              echo '${env.M2}'
+                echo '${env.JAVA_HOME}'
             }
         }
          stage('Deploy') {
