@@ -4,7 +4,8 @@ node {
   }
 
   stage("Compilation") {
-    sh "mvn clean install"
+    sh "chmod 777 ./mvnw"
+    sh "./mvnw clean install"
   }
     stage("Deployment") {
       sh 'java -jar ./*.jar'
