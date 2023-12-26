@@ -8,6 +8,6 @@ node {
     sh "./mvnw clean package"
   }
     stage("Deployment") {
-      sh 'java -jar ./springboot-pipeline-0.0.1-SNAPSHOT.jar'
+      sh 'java -jar ./target/*.jar'
     }
 }
