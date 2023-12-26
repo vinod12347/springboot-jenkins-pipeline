@@ -5,9 +5,9 @@ node {
 
   stage("Compilation") {
     sh "chmod 777 ./mvnw"
-    sh "./mvnw clean install"
+    sh "./mvnw clean package"
   }
     stage("Deployment") {
-      sh 'java -jar ./*.jar'
+      sh 'java -jar ./springboot-pipeline-0.0.1-SNAPSHOT.jar'
     }
 }
