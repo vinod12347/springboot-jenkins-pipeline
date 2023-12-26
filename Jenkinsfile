@@ -4,11 +4,9 @@ node {
   }
 
   stage("Compilation") {
-    sh "chmod 777 ./mvnw"
-    sh "./mvnw clean install"
+    sh "mvn clean install"
   }
     stage("Deployment") {
-      sh "chmod 777 ./mvnw"
-      sh 'nohup ./mvnw spring-boot:run -Dserver.port=8001 &'
+      sh 'java -jar ./*.jar'
     }
 }
