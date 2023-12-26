@@ -13,6 +13,7 @@ node {
                 withEnv(['JENKINS_NODE_COOKIE=dontkill']) {
                     sh 'nohup ./mvnw spring-boot:run -Dserver.port=8081 &'
                 }
+    }
 
   
 }
