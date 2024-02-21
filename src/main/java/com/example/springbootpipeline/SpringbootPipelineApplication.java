@@ -21,7 +21,7 @@ public class SpringbootPipelineApplication {
 
     @GetMapping("/greeting")
     public ResponseEntity<String> getMessage(){
-
+        // return the feature Response Object
         return ResponseEntity.status(HttpStatus.OK).body("User Logged in Success");
     }
 
