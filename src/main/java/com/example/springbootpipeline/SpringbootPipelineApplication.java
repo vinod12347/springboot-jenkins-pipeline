@@ -25,4 +25,10 @@ public class SpringbootPipelineApplication {
         return ResponseEntity.status(HttpStatus.OK).body("User Logged in Success");
     }
 
+    @GetMapping("/contacts")
+    public ResponseEntity<String> getContactDetails(){
+        // return the feature Response Object
+        return ResponseEntity.status(HttpStatus.OK).body("{\"name\":\"vinod\",\"phone-number\":\"7348925125\",\"email\":\"vinodrajKj@gmail.com\"}");
+    }
+
 }
